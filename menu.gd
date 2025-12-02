@@ -16,13 +16,13 @@ func _on_button_pressed() -> void:
 		
 		for i in Signalbus.path:
 			t=t.get_node(i)
-		t.get_node("Buttons").hide()
+		t.hide()
 		Signalbus.path.pop_back()
 		t = self
 		for i in Signalbus.path:
 			t=t.get_node(i)
 		
 		t.get_node("Buttons").show()
-		print(Signalbus.path)
+		
 	
 	

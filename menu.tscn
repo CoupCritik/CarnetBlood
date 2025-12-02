@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://kex6sgob3gnd"]
+[gd_scene load_steps=5 format=3 uid="uid://kex6sgob3gnd"]
 
 [ext_resource type="Script" uid="uid://b87gp8frg2idt" path="res://menu.gd" id="1_lti8b"]
 [ext_resource type="PackedScene" uid="uid://dvtk3mry1k1tn" path="res://sub_menu.tscn" id="2_4hy44"]
 [ext_resource type="Script" uid="uid://cx5s7q4eefb5o" path="res://option_button.gd" id="3_mae5d"]
+[ext_resource type="Script" uid="uid://c4hfqbqibrq8i" path="res://cestun.gd" id="4_4hy44"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -16,86 +17,1027 @@ script = ExtResource("1_lti8b")
 [node name="Arbre" parent="." instance=ExtResource("2_4hy44")]
 unique_name_in_owner = true
 layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
 
 [node name="Trouble Brewing" parent="Arbre" instance=ExtResource("2_4hy44")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="Donner les rôles" parent="Arbre/Trouble Brewing" instance=ExtResource("2_4hy44")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="Roles" type="VBoxContainer" parent="Arbre/Trouble Brewing/Donner les rôles"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -60.0
+offset_right = 193.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Trouble Brewing/Donner les rôles/Roles"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Tu es :"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="Arbre/Trouble Brewing/Donner les rôles/Roles"]
+layout_mode = 2
+script = ExtResource("3_mae5d")
+villageois = true
+parias = true
+sbires = true
+demons = true
+
+[node name="Label2" type="RichTextLabel" parent="Arbre/Trouble Brewing/Donner les rôles/Roles"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Tu es un"
+fit_content = true
+horizontal_alignment = 1
+script = ExtResource("4_4hy44")
 
 [node name="Première nuit" parent="Arbre/Trouble Brewing" instance=ExtResource("2_4hy44")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
 
 [node name="Démon" parent="Arbre/Trouble Brewing/Première nuit" instance=ExtResource("2_4hy44")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Arbre/Trouble Brewing/Première nuit/Démon"]
+[node name="Demon" type="VBoxContainer" parent="Arbre/Trouble Brewing/Première nuit/Démon"]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -80.5
-offset_right = 80.5
-offset_bottom = 53.0
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -55.5
+offset_right = 193.0
+offset_bottom = 55.5
 grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Label" type="Label" parent="Arbre/Trouble Brewing/Première nuit/Démon/VBoxContainer"]
+[node name="Label" type="RichTextLabel" parent="Arbre/Trouble Brewing/Première nuit/Démon/Demon"]
 layout_mode = 2
+bbcode_enabled = true
 text = "Tu es le démon
 Tes trois bluffs sont :"
+fit_content = true
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Arbre/Trouble Brewing/Première nuit/Démon/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Arbre/Trouble Brewing/Première nuit/Démon/Demon"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
-[node name="OptionButton" type="OptionButton" parent="Arbre/Trouble Brewing/Première nuit/Démon/VBoxContainer/HBoxContainer"]
+[node name="OptionButton" type="OptionButton" parent="Arbre/Trouble Brewing/Première nuit/Démon/Demon/HBoxContainer"]
 layout_mode = 2
-item_count = 1
-popup/item_0/text = "Empathique"
-popup/item_0/id = 0
 script = ExtResource("3_mae5d")
 villageois = true
 parias = true
 
-[node name="OptionButton3" type="OptionButton" parent="Arbre/Trouble Brewing/Première nuit/Démon/VBoxContainer/HBoxContainer"]
+[node name="OptionButton3" type="OptionButton" parent="Arbre/Trouble Brewing/Première nuit/Démon/Demon/HBoxContainer"]
 layout_mode = 2
-item_count = 1
-popup/item_0/text = "Empathique"
-popup/item_0/id = 0
 script = ExtResource("3_mae5d")
+villageois = true
+parias = true
 
-[node name="OptionButton4" type="OptionButton" parent="Arbre/Trouble Brewing/Première nuit/Démon/VBoxContainer/HBoxContainer"]
+[node name="OptionButton4" type="OptionButton" parent="Arbre/Trouble Brewing/Première nuit/Démon/Demon/HBoxContainer"]
 layout_mode = 2
-item_count = 1
-popup/item_0/text = "Empathique"
-popup/item_0/id = 0
 script = ExtResource("3_mae5d")
+villageois = true
+parias = true
 
-[node name="Label2" type="Label" parent="Arbre/Trouble Brewing/Première nuit/Démon/VBoxContainer"]
+[node name="Label2" type="RichTextLabel" parent="Arbre/Trouble Brewing/Première nuit/Démon/Demon"]
 layout_mode = 2
-text = "Je te pointe maintenant tes coépiquiers du doigt"
+bbcode_enabled = true
+text = "Une fois que tu as lu tes trois bluffs, le MJ te pointe du doigts tes sbires"
+fit_content = true
 horizontal_alignment = 1
+
+[node name="Sbires" parent="Arbre/Trouble Brewing/Première nuit" instance=ExtResource("2_4hy44")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="Sbires" type="VBoxContainer" parent="Arbre/Trouble Brewing/Première nuit/Sbires"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -55.5
+offset_right = 193.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Trouble Brewing/Première nuit/Sbires/Sbires"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Vous êtes sbires !
+Le MJ réveille les sbires, puis pointe du doigt le démon."
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Label2" type="RichTextLabel" parent="Arbre/Trouble Brewing/Première nuit/Sbires/Sbires"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Attention :"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="Arbre/Trouble Brewing/Première nuit/Sbires/Sbires"]
+layout_mode = 2
+item_count = 2
+popup/item_0/text = "Il y a une demoiselle !"
+popup/item_0/id = 0
+popup/item_1/text = "Il n'y a pas de demoiselle"
+popup/item_1/id = 1
+script = ExtResource("3_mae5d")
+
+[node name="Enquêteur" parent="Arbre/Trouble Brewing/Première nuit" instance=ExtResource("2_4hy44")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="Boite" type="VBoxContainer" parent="Arbre/Trouble Brewing/Première nuit/Enquêteur"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -55.5
+offset_right = 193.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Trouble Brewing/Première nuit/Enquêteur/Boite"]
+layout_mode = 2
+bbcode_enabled = true
+text = "L'un de ces deux joueurs possède le rôle suivant :"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="Arbre/Trouble Brewing/Première nuit/Enquêteur/Boite"]
+layout_mode = 2
+item_count = 1
+popup/item_0/id = 0
+script = ExtResource("3_mae5d")
+sbires = true
+
+[node name="Libraire" parent="Arbre/Trouble Brewing/Première nuit" instance=ExtResource("2_4hy44")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="Boite" type="VBoxContainer" parent="Arbre/Trouble Brewing/Première nuit/Libraire"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -55.5
+offset_right = 193.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Trouble Brewing/Première nuit/Libraire/Boite"]
+layout_mode = 2
+bbcode_enabled = true
+text = "L'un de ces deux joueurs possède le rôle suivant :"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="Arbre/Trouble Brewing/Première nuit/Libraire/Boite"]
+layout_mode = 2
+item_count = 1
+popup/item_0/id = 0
+script = ExtResource("3_mae5d")
+parias = true
+
+[node name="Lavandière" parent="Arbre/Trouble Brewing/Première nuit" instance=ExtResource("2_4hy44")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="Boite" type="VBoxContainer" parent="Arbre/Trouble Brewing/Première nuit/Lavandière"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -55.5
+offset_right = 193.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Trouble Brewing/Première nuit/Lavandière/Boite"]
+layout_mode = 2
+bbcode_enabled = true
+text = "L'un de ces deux joueurs possède le rôle suivant :"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="Arbre/Trouble Brewing/Première nuit/Lavandière/Boite"]
+layout_mode = 2
+item_count = 1
+popup/item_0/id = 0
+script = ExtResource("3_mae5d")
+villageois = true
 
 [node name="Autres nuits" parent="Arbre/Trouble Brewing" instance=ExtResource("2_4hy44")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
 
+[node name="Gardien" parent="Arbre/Trouble Brewing/Autres nuits" instance=ExtResource("2_4hy44")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="Gardien" type="VBoxContainer" parent="Arbre/Trouble Brewing/Autres nuits/Gardien"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -55.5
+offset_right = 193.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Trouble Brewing/Autres nuits/Gardien/Gardien"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Tu es mort ! Choisis un joueur !
+
+Ce joueur est :"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="Arbre/Trouble Brewing/Autres nuits/Gardien/Gardien"]
+layout_mode = 2
+item_count = 1
+popup/item_0/id = 0
+script = ExtResource("3_mae5d")
+villageois = true
+parias = true
+sbires = true
+demons = true
+
+[node name="Croque-mort" parent="Arbre/Trouble Brewing/Autres nuits" instance=ExtResource("2_4hy44")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="Boite" type="VBoxContainer" parent="Arbre/Trouble Brewing/Autres nuits/Croque-mort"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -55.5
+offset_right = 193.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Trouble Brewing/Autres nuits/Croque-mort/Boite"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Le joueur mort pendant la journée précédente était :"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="Arbre/Trouble Brewing/Autres nuits/Croque-mort/Boite"]
+layout_mode = 2
+item_count = 1
+popup/item_0/id = 0
+script = ExtResource("3_mae5d")
+villageois = true
+parias = true
+sbires = true
+demons = true
+
 [node name="Bad Moon Rising" parent="Arbre" instance=ExtResource("2_4hy44")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
 
+[node name="Donner les rôles" parent="Arbre/Bad Moon Rising" instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="Roles" type="VBoxContainer" parent="Arbre/Bad Moon Rising/Donner les rôles"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -60.0
+offset_right = 193.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Bad Moon Rising/Donner les rôles/Roles"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Tu es :"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="Arbre/Bad Moon Rising/Donner les rôles/Roles"]
+layout_mode = 2
+script = ExtResource("3_mae5d")
+villageois = true
+parias = true
+sbires = true
+demons = true
+
+[node name="Label2" type="RichTextLabel" parent="Arbre/Bad Moon Rising/Donner les rôles/Roles"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Tu es un"
+fit_content = true
+horizontal_alignment = 1
+script = ExtResource("4_4hy44")
+
+[node name="Première nuit" parent="Arbre/Bad Moon Rising" instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="Démon" parent="Arbre/Bad Moon Rising/Première nuit" instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="Demon" type="VBoxContainer" parent="Arbre/Bad Moon Rising/Première nuit/Démon"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -55.5
+offset_right = 193.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Bad Moon Rising/Première nuit/Démon/Demon"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Tu es le démon
+Tes trois bluffs sont :"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Arbre/Bad Moon Rising/Première nuit/Démon/Demon"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="OptionButton" type="OptionButton" parent="Arbre/Bad Moon Rising/Première nuit/Démon/Demon/HBoxContainer"]
+layout_mode = 2
+script = ExtResource("3_mae5d")
+villageois = true
+parias = true
+
+[node name="OptionButton3" type="OptionButton" parent="Arbre/Bad Moon Rising/Première nuit/Démon/Demon/HBoxContainer"]
+layout_mode = 2
+script = ExtResource("3_mae5d")
+villageois = true
+parias = true
+
+[node name="OptionButton4" type="OptionButton" parent="Arbre/Bad Moon Rising/Première nuit/Démon/Demon/HBoxContainer"]
+layout_mode = 2
+script = ExtResource("3_mae5d")
+villageois = true
+parias = true
+
+[node name="Label2" type="RichTextLabel" parent="Arbre/Bad Moon Rising/Première nuit/Démon/Demon"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Une fois que tu as lu tes trois bluffs, le MJ te pointe du doigts tes sbires"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Sbires" parent="Arbre/Bad Moon Rising/Première nuit" instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="Sbires" type="VBoxContainer" parent="Arbre/Bad Moon Rising/Première nuit/Sbires"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -55.5
+offset_right = 193.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Bad Moon Rising/Première nuit/Sbires/Sbires"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Vous êtes sbires !
+Le MJ réveille les sbires, puis pointe du doigt le démon."
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Label2" type="RichTextLabel" parent="Arbre/Bad Moon Rising/Première nuit/Sbires/Sbires"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Attention :"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="Arbre/Bad Moon Rising/Première nuit/Sbires/Sbires"]
+layout_mode = 2
+item_count = 2
+popup/item_0/text = "Il y a une demoiselle !"
+popup/item_0/id = 0
+popup/item_1/text = "Il n'y a pas de demoiselle"
+popup/item_1/id = 1
+script = ExtResource("3_mae5d")
+
+[node name="Enquêteur" parent="Arbre/Bad Moon Rising/Première nuit" instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="Boite" type="VBoxContainer" parent="Arbre/Bad Moon Rising/Première nuit/Enquêteur"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -55.5
+offset_right = 193.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Bad Moon Rising/Première nuit/Enquêteur/Boite"]
+layout_mode = 2
+bbcode_enabled = true
+text = "L'un de ces deux joueurs possède le rôle suivant :"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="Arbre/Bad Moon Rising/Première nuit/Enquêteur/Boite"]
+layout_mode = 2
+item_count = 1
+popup/item_0/id = 0
+script = ExtResource("3_mae5d")
+sbires = true
+
+[node name="Libraire" parent="Arbre/Bad Moon Rising/Première nuit" instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="Boite" type="VBoxContainer" parent="Arbre/Bad Moon Rising/Première nuit/Libraire"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -55.5
+offset_right = 193.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Bad Moon Rising/Première nuit/Libraire/Boite"]
+layout_mode = 2
+bbcode_enabled = true
+text = "L'un de ces deux joueurs possède le rôle suivant :"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="Arbre/Bad Moon Rising/Première nuit/Libraire/Boite"]
+layout_mode = 2
+item_count = 1
+popup/item_0/id = 0
+script = ExtResource("3_mae5d")
+parias = true
+
+[node name="Lavandière" parent="Arbre/Bad Moon Rising/Première nuit" instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="Boite" type="VBoxContainer" parent="Arbre/Bad Moon Rising/Première nuit/Lavandière"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -55.5
+offset_right = 193.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Bad Moon Rising/Première nuit/Lavandière/Boite"]
+layout_mode = 2
+bbcode_enabled = true
+text = "L'un de ces deux joueurs possède le rôle suivant :"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="Arbre/Bad Moon Rising/Première nuit/Lavandière/Boite"]
+layout_mode = 2
+item_count = 1
+popup/item_0/id = 0
+script = ExtResource("3_mae5d")
+villageois = true
+
+[node name="Autres nuits" parent="Arbre/Bad Moon Rising" instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+
+[node name="Gardien" parent="Arbre/Bad Moon Rising/Autres nuits" instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="Gardien" type="VBoxContainer" parent="Arbre/Bad Moon Rising/Autres nuits/Gardien"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -55.5
+offset_right = 193.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Bad Moon Rising/Autres nuits/Gardien/Gardien"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Tu es mort ! Choisis un joueur !
+
+Ce joueur est :"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="Arbre/Bad Moon Rising/Autres nuits/Gardien/Gardien"]
+layout_mode = 2
+item_count = 1
+popup/item_0/id = 0
+script = ExtResource("3_mae5d")
+villageois = true
+parias = true
+sbires = true
+demons = true
+
+[node name="Sects And Violets" parent="Arbre" instance=ExtResource("2_4hy44")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[node name="Donner les rôles" parent="Arbre/Sects And Violets" instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="Roles" type="VBoxContainer" parent="Arbre/Sects And Violets/Donner les rôles"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -60.0
+offset_right = 193.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Sects And Violets/Donner les rôles/Roles"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Tu es :"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="Arbre/Sects And Violets/Donner les rôles/Roles"]
+layout_mode = 2
+script = ExtResource("3_mae5d")
+villageois = true
+parias = true
+sbires = true
+demons = true
+
+[node name="Label2" type="RichTextLabel" parent="Arbre/Sects And Violets/Donner les rôles/Roles"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Tu es un"
+fit_content = true
+horizontal_alignment = 1
+script = ExtResource("4_4hy44")
+
+[node name="Première nuit" parent="Arbre/Sects And Violets" instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="Démon" parent="Arbre/Sects And Violets/Première nuit" instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="Demon" type="VBoxContainer" parent="Arbre/Sects And Violets/Première nuit/Démon"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -55.5
+offset_right = 193.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Sects And Violets/Première nuit/Démon/Demon"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Tu es le démon
+Tes trois bluffs sont :"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Arbre/Sects And Violets/Première nuit/Démon/Demon"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="OptionButton" type="OptionButton" parent="Arbre/Sects And Violets/Première nuit/Démon/Demon/HBoxContainer"]
+layout_mode = 2
+script = ExtResource("3_mae5d")
+villageois = true
+parias = true
+
+[node name="OptionButton3" type="OptionButton" parent="Arbre/Sects And Violets/Première nuit/Démon/Demon/HBoxContainer"]
+layout_mode = 2
+script = ExtResource("3_mae5d")
+villageois = true
+parias = true
+
+[node name="OptionButton4" type="OptionButton" parent="Arbre/Sects And Violets/Première nuit/Démon/Demon/HBoxContainer"]
+layout_mode = 2
+script = ExtResource("3_mae5d")
+villageois = true
+parias = true
+
+[node name="Label2" type="RichTextLabel" parent="Arbre/Sects And Violets/Première nuit/Démon/Demon"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Une fois que tu as lu tes trois bluffs, le MJ te pointe du doigts tes sbires"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Sbires" parent="Arbre/Sects And Violets/Première nuit" instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="Sbires" type="VBoxContainer" parent="Arbre/Sects And Violets/Première nuit/Sbires"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -55.5
+offset_right = 193.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Sects And Violets/Première nuit/Sbires/Sbires"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Vous êtes sbires !
+Le MJ réveille les sbires, puis pointe du doigt le démon."
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Label2" type="RichTextLabel" parent="Arbre/Sects And Violets/Première nuit/Sbires/Sbires"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Attention :"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="Arbre/Sects And Violets/Première nuit/Sbires/Sbires"]
+layout_mode = 2
+item_count = 2
+popup/item_0/text = "Il y a une demoiselle !"
+popup/item_0/id = 0
+popup/item_1/text = "Il n'y a pas de demoiselle"
+popup/item_1/id = 1
+script = ExtResource("3_mae5d")
+
+[node name="Enquêteur" parent="Arbre/Sects And Violets/Première nuit" instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="Boite" type="VBoxContainer" parent="Arbre/Sects And Violets/Première nuit/Enquêteur"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -55.5
+offset_right = 193.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Sects And Violets/Première nuit/Enquêteur/Boite"]
+layout_mode = 2
+bbcode_enabled = true
+text = "L'un de ces deux joueurs possède le rôle suivant :"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="Arbre/Sects And Violets/Première nuit/Enquêteur/Boite"]
+layout_mode = 2
+item_count = 1
+popup/item_0/id = 0
+script = ExtResource("3_mae5d")
+sbires = true
+
+[node name="Libraire" parent="Arbre/Sects And Violets/Première nuit" instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="Boite" type="VBoxContainer" parent="Arbre/Sects And Violets/Première nuit/Libraire"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -55.5
+offset_right = 193.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Sects And Violets/Première nuit/Libraire/Boite"]
+layout_mode = 2
+bbcode_enabled = true
+text = "L'un de ces deux joueurs possède le rôle suivant :"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="Arbre/Sects And Violets/Première nuit/Libraire/Boite"]
+layout_mode = 2
+item_count = 1
+popup/item_0/id = 0
+script = ExtResource("3_mae5d")
+parias = true
+
+[node name="Lavandière" parent="Arbre/Sects And Violets/Première nuit" instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="Boite" type="VBoxContainer" parent="Arbre/Sects And Violets/Première nuit/Lavandière"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -55.5
+offset_right = 193.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Sects And Violets/Première nuit/Lavandière/Boite"]
+layout_mode = 2
+bbcode_enabled = true
+text = "L'un de ces deux joueurs possède le rôle suivant :"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="Arbre/Sects And Violets/Première nuit/Lavandière/Boite"]
+layout_mode = 2
+item_count = 1
+popup/item_0/id = 0
+script = ExtResource("3_mae5d")
+villageois = true
+
+[node name="Autres nuits" parent="Arbre/Sects And Violets" instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+
+[node name="Gardien" parent="Arbre/Sects And Violets/Autres nuits" instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="Gardien" type="VBoxContainer" parent="Arbre/Sects And Violets/Autres nuits/Gardien"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -55.5
+offset_right = 193.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Sects And Violets/Autres nuits/Gardien/Gardien"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Tu es mort ! Choisis un joueur !
+
+Ce joueur est :"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="Arbre/Sects And Violets/Autres nuits/Gardien/Gardien"]
+layout_mode = 2
+item_count = 1
+popup/item_0/id = 0
+script = ExtResource("3_mae5d")
+villageois = true
+parias = true
+sbires = true
+demons = true
+
 [node name="Back" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 1
+anchors_preset = -1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -45.0
-offset_bottom = 31.0
+offset_left = -50.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -50.0
 grow_horizontal = 0
 text = "Back"
 

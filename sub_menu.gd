@@ -16,6 +16,7 @@ func _ready() -> void:
 	
 
 func openmenu(menu):
+	
 	Signalbus.path.append(menu)
 	print(Signalbus.path)
 	$Buttons.hide()

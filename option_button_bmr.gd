@@ -5,14 +5,14 @@ extends OptionButton
 @export var sbires:bool
 @export var demons:bool
 
-var tab_villageois = ["Lavandière","Libraire","Enquêteur","Chef","Empathique","Voyante","Croque-mort","Moine",
-	"Gardien","Mercenaire","Vierge","Soldat","Maire"]
+var tab_villageois = ["Grand-mère","Marin","Femme de chambre","Exorciste","Aubergiste","Parieur","Commère","Courtisan",
+	"Professeur","Ménestrel","Dame du thé","Pacifiste","Idiot"]
 
-var tab_parias = ["Demoiselle","Majordome","Ivrogne","Reclus","Saint"]
+var tab_parias = ["Voyou","Lunatique","Bricoleur","Enfant de la lune"]
 
-var tab_sbires = ["Empoisonneur","Baron","Espion","Confidente"]
+var tab_sbires = ["Parrain","Avocat du diable","Assassin","Cerveau"]
 
-var tab_demons = ["Diablotin"]
+var tab_demons = ["Zombuul","Pukka","Shabaloth","Po"]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
