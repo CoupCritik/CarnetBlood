@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvtk3mry1k1tn"]
+
+[ext_resource type="Script" uid="uid://bhpih7ob087dn" path="res://sub_menu.gd" id="1_6uhap"]
+
+[node name="SubMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+script = ExtResource("1_6uhap")
+
+[node name="Buttons" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 5.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2

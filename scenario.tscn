@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cesck33hpnknm"]
+
+[node name="BadMoonRising" type="HBoxContainer"]
+visible = false
+
+[node name="Buttons" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Nuit suivante" type="Button" parent="Buttons"]
+layout_mode = 2
+text = "Nuit suivante"
+
+[node name="Première nuit" type="Button" parent="Buttons"]
+layout_mode = 2
+text = "Première nuit"
