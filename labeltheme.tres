@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dwd4qahtafouw"]
+
+[ext_resource type="FontFile" uid="uid://btiuqd6y7ay11" path="res://Foremost Regular.ttf" id="1_ysp5o"]
+
+[resource]
+default_font = ExtResource("1_ysp5o")
+default_font_size = 50

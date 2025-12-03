@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ball48iv6mjwd"]
+
+[ext_resource type="Theme" uid="uid://hxxh0jcwjqxn" path="res://popuptheme.tres" id="1_tnosi"]
+[ext_resource type="Script" uid="uid://bnpgyihce3g53" path="res://option_button_bmr.gd" id="2_2cf5a"]
+
+[node name="OptionButton" type="OptionButton"]
+offset_right = 32.0
+offset_bottom = 20.0
+theme = ExtResource("1_tnosi")
+script = ExtResource("2_2cf5a")

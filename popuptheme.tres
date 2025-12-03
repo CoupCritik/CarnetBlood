@@ -1,0 +1,6 @@
+[gd_resource type="Theme" format=3 uid="uid://hxxh0jcwjqxn"]
+
+[resource]
+OptionButton/constants/icon_max_width = 120
+PopupMenu/colors/font_color = Color(0.6392835, 0.9445038, 0.8952623, 1)
+PopupMenu/constants/icon_max_width = 120

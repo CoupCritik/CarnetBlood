@@ -18,8 +18,10 @@ var tab_demons = ["Diablotin"]
 func _ready() -> void:
 	#Ajoute au popupmenu
 	if villageois:
-		for i in tab_villageois:
-			add_item(i)
+		for i in range(len(tab_villageois)):
+			
+			add_item(tab_villageois[i])
+			set_item_icon(i,load("res://icon.svg"))
 	
 	if parias:
 		for i in tab_parias:

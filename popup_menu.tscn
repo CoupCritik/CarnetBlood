@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bscvy7u5tarwy"]
+
+[ext_resource type="Theme" uid="uid://hxxh0jcwjqxn" path="res://popuptheme.tres" id="1_sdihw"]
+
+[node name="PopupMenu" type="PopupMenu"]
+oversampling_override = 1.0
+visible = true
+theme = ExtResource("1_sdihw")
