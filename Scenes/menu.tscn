@@ -1,12 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://kex6sgob3gnd"]
+[gd_scene load_steps=11 format=3 uid="uid://kex6sgob3gnd"]
 
-[ext_resource type="Script" uid="uid://b87gp8frg2idt" path="res://menu.gd" id="1_lti8b"]
-[ext_resource type="PackedScene" uid="uid://dvtk3mry1k1tn" path="res://sub_menu.tscn" id="2_4hy44"]
-[ext_resource type="Script" uid="uid://cx5s7q4eefb5o" path="res://option_button.gd" id="3_mae5d"]
-[ext_resource type="Script" uid="uid://c4hfqbqibrq8i" path="res://cestun.gd" id="4_4hy44"]
+[ext_resource type="Script" uid="uid://b87gp8frg2idt" path="res://Scripts/menu.gd" id="1_lti8b"]
+[ext_resource type="PackedScene" uid="uid://dvtk3mry1k1tn" path="res://Scenes/sub_menu.tscn" id="2_4hy44"]
+[ext_resource type="Script" uid="uid://cx5s7q4eefb5o" path="res://Scripts/option_button.gd" id="3_mae5d"]
+[ext_resource type="Script" uid="uid://c4hfqbqibrq8i" path="res://Scripts/cestun.gd" id="4_4hy44"]
 [ext_resource type="Theme" uid="uid://dwd4qahtafouw" path="res://labeltheme.tres" id="5_ytr4m"]
-[ext_resource type="Script" uid="uid://bnpgyihce3g53" path="res://option_button_bmr.gd" id="6_l48gv"]
-[ext_resource type="PackedScene" uid="uid://ball48iv6mjwd" path="res://option_button.tscn" id="7_kk3ma"]
+[ext_resource type="Theme" uid="uid://hxxh0jcwjqxn" path="res://popuptheme.tres" id="6_7qvly"]
+[ext_resource type="Script" uid="uid://bnpgyihce3g53" path="res://Scripts/option_button_bmr.gd" id="6_l48gv"]
+[ext_resource type="PackedScene" uid="uid://ball48iv6mjwd" path="res://Scenes/BoutonOption.tscn" id="7_kk3ma"]
+[ext_resource type="Script" uid="uid://bedi3uy4u7d0e" path="res://Scripts/labelsdemon.gd" id="8_q3rjx"]
+[ext_resource type="Script" uid="uid://drq5v0bwy3bn4" path="res://Scenes/ajoutsparias.gd" id="9_6swd7"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -447,6 +450,7 @@ horizontal_alignment = 1
 
 [node name="OptionButton" type="OptionButton" parent="Arbre/Bad Moon Rising/Donner les rôles/Roles"]
 layout_mode = 2
+theme = ExtResource("6_7qvly")
 script = ExtResource("6_l48gv")
 villageois = true
 parias = true
@@ -457,7 +461,7 @@ demons = true
 layout_mode = 2
 theme = ExtResource("5_ytr4m")
 bbcode_enabled = true
-text = "Tu es un"
+text = "Tu es un [color=blue]villageois"
 fit_content = true
 horizontal_alignment = 1
 script = ExtResource("4_4hy44")
@@ -496,31 +500,29 @@ grow_vertical = 2
 layout_mode = 2
 theme = ExtResource("5_ytr4m")
 bbcode_enabled = true
-text = "Tu es le [color=red]Zambuul[/color]
+text = "Tu es le [color=red]PUKKA[/color]
 Tes trois bluffs sont :"
 fit_content = true
 horizontal_alignment = 1
+script = ExtResource("8_q3rjx")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Arbre/Bad Moon Rising/Première nuit/Zambuul/Boite"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="OptionButton" type="OptionButton" parent="Arbre/Bad Moon Rising/Première nuit/Zambuul/Boite/HBoxContainer"]
+[node name="OptionBouton" parent="Arbre/Bad Moon Rising/Première nuit/Zambuul/Boite/HBoxContainer" instance=ExtResource("7_kk3ma")]
 layout_mode = 2
-script = ExtResource("6_l48gv")
 villageois = true
 parias = true
 
-[node name="OptionButton3" type="OptionButton" parent="Arbre/Bad Moon Rising/Première nuit/Zambuul/Boite/HBoxContainer"]
+[node name="OptionBouton2" parent="Arbre/Bad Moon Rising/Première nuit/Zambuul/Boite/HBoxContainer" instance=ExtResource("7_kk3ma")]
 layout_mode = 2
-script = ExtResource("6_l48gv")
 villageois = true
 parias = true
 
-[node name="OptionButton4" type="OptionButton" parent="Arbre/Bad Moon Rising/Première nuit/Zambuul/Boite/HBoxContainer"]
+[node name="OptionBouton3" parent="Arbre/Bad Moon Rising/Première nuit/Zambuul/Boite/HBoxContainer" instance=ExtResource("7_kk3ma")]
 layout_mode = 2
-script = ExtResource("6_l48gv")
 villageois = true
 parias = true
 
@@ -528,7 +530,7 @@ parias = true
 layout_mode = 2
 theme = ExtResource("5_ytr4m")
 bbcode_enabled = true
-text = "Une fois que tu as lu tes trois bluffs, le MJ te pointe du doigts tes sbires"
+text = "Une fois que tu as lu tes trois bluffs, le MJ te pointe du doigts tes sbires. Pointe également un joueur à empoisonner."
 fit_content = true
 horizontal_alignment = 1
 
@@ -558,31 +560,29 @@ grow_vertical = 2
 layout_mode = 2
 theme = ExtResource("5_ytr4m")
 bbcode_enabled = true
-text = "Tu es [color=red]Po[/color]
+text = "Tu es le [color=red]PUKKA[/color]
 Tes trois bluffs sont :"
 fit_content = true
 horizontal_alignment = 1
+script = ExtResource("8_q3rjx")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Arbre/Bad Moon Rising/Première nuit/Po/Boite"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="OptionButton" type="OptionButton" parent="Arbre/Bad Moon Rising/Première nuit/Po/Boite/HBoxContainer"]
+[node name="OptionBouton" parent="Arbre/Bad Moon Rising/Première nuit/Po/Boite/HBoxContainer" instance=ExtResource("7_kk3ma")]
 layout_mode = 2
-script = ExtResource("6_l48gv")
 villageois = true
 parias = true
 
-[node name="OptionButton3" type="OptionButton" parent="Arbre/Bad Moon Rising/Première nuit/Po/Boite/HBoxContainer"]
+[node name="OptionBouton2" parent="Arbre/Bad Moon Rising/Première nuit/Po/Boite/HBoxContainer" instance=ExtResource("7_kk3ma")]
 layout_mode = 2
-script = ExtResource("6_l48gv")
 villageois = true
 parias = true
 
-[node name="OptionButton4" type="OptionButton" parent="Arbre/Bad Moon Rising/Première nuit/Po/Boite/HBoxContainer"]
+[node name="OptionBouton3" parent="Arbre/Bad Moon Rising/Première nuit/Po/Boite/HBoxContainer" instance=ExtResource("7_kk3ma")]
 layout_mode = 2
-script = ExtResource("6_l48gv")
 villageois = true
 parias = true
 
@@ -590,7 +590,7 @@ parias = true
 layout_mode = 2
 theme = ExtResource("5_ytr4m")
 bbcode_enabled = true
-text = "Une fois que tu as lu tes trois bluffs, le MJ te pointe du doigts tes sbires"
+text = "Une fois que tu as lu tes trois bluffs, le MJ te pointe du doigts tes sbires."
 fit_content = true
 horizontal_alignment = 1
 
@@ -620,31 +620,29 @@ grow_vertical = 2
 layout_mode = 2
 theme = ExtResource("5_ytr4m")
 bbcode_enabled = true
-text = "Tu es le [color=red]Shabaloth[/color]
+text = "Tu es le [color=red]PUKKA[/color]
 Tes trois bluffs sont :"
 fit_content = true
 horizontal_alignment = 1
+script = ExtResource("8_q3rjx")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Arbre/Bad Moon Rising/Première nuit/Shabaloth/Boite"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="OptionButton" type="OptionButton" parent="Arbre/Bad Moon Rising/Première nuit/Shabaloth/Boite/HBoxContainer"]
+[node name="OptionBouton" parent="Arbre/Bad Moon Rising/Première nuit/Shabaloth/Boite/HBoxContainer" instance=ExtResource("7_kk3ma")]
 layout_mode = 2
-script = ExtResource("6_l48gv")
 villageois = true
 parias = true
 
-[node name="OptionButton3" type="OptionButton" parent="Arbre/Bad Moon Rising/Première nuit/Shabaloth/Boite/HBoxContainer"]
+[node name="OptionBouton2" parent="Arbre/Bad Moon Rising/Première nuit/Shabaloth/Boite/HBoxContainer" instance=ExtResource("7_kk3ma")]
 layout_mode = 2
-script = ExtResource("6_l48gv")
 villageois = true
 parias = true
 
-[node name="OptionButton4" type="OptionButton" parent="Arbre/Bad Moon Rising/Première nuit/Shabaloth/Boite/HBoxContainer"]
+[node name="OptionBouton3" parent="Arbre/Bad Moon Rising/Première nuit/Shabaloth/Boite/HBoxContainer" instance=ExtResource("7_kk3ma")]
 layout_mode = 2
-script = ExtResource("6_l48gv")
 villageois = true
 parias = true
 
@@ -652,7 +650,7 @@ parias = true
 layout_mode = 2
 theme = ExtResource("5_ytr4m")
 bbcode_enabled = true
-text = "Une fois que tu as lu tes trois bluffs, le MJ te pointe du doigts tes sbires"
+text = "Une fois que tu as lu tes trois bluffs, le MJ te pointe du doigts tes sbires. "
 fit_content = true
 horizontal_alignment = 1
 
@@ -686,27 +684,25 @@ text = "Tu es le [color=red]PUKKA[/color]
 Tes trois bluffs sont :"
 fit_content = true
 horizontal_alignment = 1
+script = ExtResource("8_q3rjx")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Arbre/Bad Moon Rising/Première nuit/Pukka/Boite"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="OptionButton" type="OptionButton" parent="Arbre/Bad Moon Rising/Première nuit/Pukka/Boite/HBoxContainer"]
+[node name="OptionBouton" parent="Arbre/Bad Moon Rising/Première nuit/Pukka/Boite/HBoxContainer" instance=ExtResource("7_kk3ma")]
 layout_mode = 2
-script = ExtResource("6_l48gv")
 villageois = true
 parias = true
 
-[node name="OptionButton3" type="OptionButton" parent="Arbre/Bad Moon Rising/Première nuit/Pukka/Boite/HBoxContainer"]
+[node name="OptionBouton2" parent="Arbre/Bad Moon Rising/Première nuit/Pukka/Boite/HBoxContainer" instance=ExtResource("7_kk3ma")]
 layout_mode = 2
-script = ExtResource("6_l48gv")
 villageois = true
 parias = true
 
-[node name="OptionButton4" type="OptionButton" parent="Arbre/Bad Moon Rising/Première nuit/Pukka/Boite/HBoxContainer"]
+[node name="OptionBouton3" parent="Arbre/Bad Moon Rising/Première nuit/Pukka/Boite/HBoxContainer" instance=ExtResource("7_kk3ma")]
 layout_mode = 2
-script = ExtResource("6_l48gv")
 villageois = true
 parias = true
 
@@ -726,7 +722,7 @@ anchor_top = 0.5
 anchor_bottom = 0.5
 grow_vertical = 2
 
-[node name="Boite" type="VBoxContainer" parent="Arbre/Bad Moon Rising/Première nuit/Grand-mère"]
+[node name="MontrerJoueur" type="VBoxContainer" parent="Arbre/Bad Moon Rising/Première nuit/Grand-mère"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -740,7 +736,7 @@ offset_bottom = 55.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="RichTextLabel" parent="Arbre/Bad Moon Rising/Première nuit/Grand-mère/Boite"]
+[node name="Label" type="RichTextLabel" parent="Arbre/Bad Moon Rising/Première nuit/Grand-mère/MontrerJoueur"]
 layout_mode = 2
 theme = ExtResource("5_ytr4m")
 bbcode_enabled = true
@@ -748,14 +744,322 @@ text = "Le MJ va te pointer du doigt un joueur. Ce joueur est :"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="OptionButton2" parent="Arbre/Bad Moon Rising/Première nuit/Grand-mère/Boite" instance=ExtResource("7_kk3ma")]
+[node name="OptionButton2" parent="Arbre/Bad Moon Rising/Première nuit/Grand-mère/MontrerJoueur" instance=ExtResource("7_kk3ma")]
 layout_mode = 2
 villageois = true
 parias = true
 
+[node name="Label2" type="RichTextLabel" parent="Arbre/Bad Moon Rising/Première nuit/Grand-mère/MontrerJoueur"]
+layout_mode = 2
+theme = ExtResource("5_ytr4m")
+bbcode_enabled = true
+text = "S'il meurt, tu mourras avec lui."
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Parieur" parent="Arbre/Bad Moon Rising/Première nuit" instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="MontrerJoueur" type="VBoxContainer" parent="Arbre/Bad Moon Rising/Première nuit/Parieur"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -55.5
+offset_right = 193.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Bad Moon Rising/Première nuit/Parieur/MontrerJoueur"]
+layout_mode = 2
+theme = ExtResource("5_ytr4m")
+bbcode_enabled = true
+text = "Choisis un role et pointe un joueur ! Si tu as tort, tu meurs"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="OptionButton2" parent="Arbre/Bad Moon Rising/Première nuit/Parieur/MontrerJoueur" instance=ExtResource("7_kk3ma")]
+layout_mode = 2
+villageois = true
+parias = true
+sbires = true
+demons = true
+
+[node name="Courtisane" parent="Arbre/Bad Moon Rising/Première nuit" instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="MontrerJoueur" type="VBoxContainer" parent="Arbre/Bad Moon Rising/Première nuit/Courtisane"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -55.5
+offset_right = 193.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Bad Moon Rising/Première nuit/Courtisane/MontrerJoueur"]
+layout_mode = 2
+theme = ExtResource("5_ytr4m")
+bbcode_enabled = true
+text = "Choisis un role ! S'il est en jeu, il devient ivre 3 jours 3 nuits"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="OptionButton2" parent="Arbre/Bad Moon Rising/Première nuit/Courtisane/MontrerJoueur" instance=ExtResource("7_kk3ma")]
+layout_mode = 2
+villageois = true
+parias = true
+sbires = true
+demons = true
+
+[node name="Parrain" parent="Arbre/Bad Moon Rising/Première nuit" instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="MontrerJoueur" type="VBoxContainer" parent="Arbre/Bad Moon Rising/Première nuit/Parrain"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -55.5
+offset_right = 193.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Bad Moon Rising/Première nuit/Parrain/MontrerJoueur"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme = ExtResource("5_ytr4m")
+bbcode_enabled = true
+text = "Les parias suivants sont en jeu"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Arbre/Bad Moon Rising/Première nuit/Parrain/MontrerJoueur"]
+layout_mode = 2
+alignment = 1
+script = ExtResource("9_6swd7")
+
+[node name="BoutonOption" parent="Arbre/Bad Moon Rising/Première nuit/Parrain/MontrerJoueur/HBoxContainer2" instance=ExtResource("7_kk3ma")]
+layout_mode = 2
+parias = true
+
+[node name="BoutonOption2" parent="Arbre/Bad Moon Rising/Première nuit/Parrain/MontrerJoueur/HBoxContainer2" instance=ExtResource("7_kk3ma")]
+visible = false
+layout_mode = 2
+parias = true
+
+[node name="BoutonOption3" parent="Arbre/Bad Moon Rising/Première nuit/Parrain/MontrerJoueur/HBoxContainer2" instance=ExtResource("7_kk3ma")]
+visible = false
+layout_mode = 2
+parias = true
+
+[node name="BoutonOption4" parent="Arbre/Bad Moon Rising/Première nuit/Parrain/MontrerJoueur/HBoxContainer2" instance=ExtResource("7_kk3ma")]
+visible = false
+layout_mode = 2
+parias = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Arbre/Bad Moon Rising/Première nuit/Parrain/MontrerJoueur"]
+layout_mode = 2
+alignment = 1
+
+[node name="Plus" type="Button" parent="Arbre/Bad Moon Rising/Première nuit/Parrain/MontrerJoueur/HBoxContainer"]
+layout_mode = 2
+text = "+"
+
+[node name="Minus" type="Button" parent="Arbre/Bad Moon Rising/Première nuit/Parrain/MontrerJoueur/HBoxContainer"]
+layout_mode = 2
+text = "-"
+
 [node name="Autres nuits" parent="Arbre/Bad Moon Rising" instance=ExtResource("2_4hy44")]
 visible = false
 layout_mode = 1
+
+[node name="Parieur" parent="Arbre/Bad Moon Rising/Autres nuits" instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="MontrerJoueur" type="VBoxContainer" parent="Arbre/Bad Moon Rising/Autres nuits/Parieur"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -55.5
+offset_right = 193.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Bad Moon Rising/Autres nuits/Parieur/MontrerJoueur"]
+layout_mode = 2
+theme = ExtResource("5_ytr4m")
+bbcode_enabled = true
+text = "Choisis un role et pointe un joueur ! Si tu as tort, tu meurs"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="OptionButton2" parent="Arbre/Bad Moon Rising/Autres nuits/Parieur/MontrerJoueur" instance=ExtResource("7_kk3ma")]
+layout_mode = 2
+villageois = true
+parias = true
+sbires = true
+demons = true
+
+[node name="Courtisane" parent="Arbre/Bad Moon Rising/Autres nuits" instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="MontrerJoueur" type="VBoxContainer" parent="Arbre/Bad Moon Rising/Autres nuits/Courtisane"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -55.5
+offset_right = 193.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Bad Moon Rising/Autres nuits/Courtisane/MontrerJoueur"]
+layout_mode = 2
+theme = ExtResource("5_ytr4m")
+bbcode_enabled = true
+text = "Choisis un role ! S'il est en jeu, il devient ivre 3 jours 3 nuits"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="OptionButton2" parent="Arbre/Bad Moon Rising/Autres nuits/Courtisane/MontrerJoueur" instance=ExtResource("7_kk3ma")]
+layout_mode = 2
+villageois = true
+parias = true
+sbires = true
+demons = true
+
+[node name="Montrer un role" parent="Arbre/Bad Moon Rising" instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+
+[node name="Ce joueur est" parent="Arbre/Bad Moon Rising/Montrer un role" instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+
+[node name="MontrerJoueur" type="VBoxContainer" parent="Arbre/Bad Moon Rising/Montrer un role/Ce joueur est"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -55.5
+offset_right = 193.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Bad Moon Rising/Montrer un role/Ce joueur est/MontrerJoueur"]
+layout_mode = 2
+theme = ExtResource("5_ytr4m")
+bbcode_enabled = true
+text = "Ce joueur est :"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="OptionButton2" parent="Arbre/Bad Moon Rising/Montrer un role/Ce joueur est/MontrerJoueur" instance=ExtResource("7_kk3ma")]
+layout_mode = 2
+villageois = true
+parias = true
+sbires = true
+demons = true
+
+[node name="Tu es désormais" parent="Arbre/Bad Moon Rising/Montrer un role" instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+
+[node name="MontrerJoueur" type="VBoxContainer" parent="Arbre/Bad Moon Rising/Montrer un role/Tu es désormais"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -55.5
+offset_right = 193.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Bad Moon Rising/Montrer un role/Tu es désormais/MontrerJoueur"]
+layout_mode = 2
+theme = ExtResource("5_ytr4m")
+bbcode_enabled = true
+text = "Tu es désormais :"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="OptionButton2" parent="Arbre/Bad Moon Rising/Montrer un role/Tu es désormais/MontrerJoueur" instance=ExtResource("7_kk3ma")]
+layout_mode = 2
+villageois = true
+parias = true
+sbires = true
+demons = true
+
+[node name="Texte personnalisé" parent="Arbre/Bad Moon Rising" instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+
+[node name="TextEdit" type="TextEdit" parent="Arbre/Bad Moon Rising/Texte personnalisé"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = -1
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_ytr4m")
+scroll_fit_content_height = true
+scroll_fit_content_width = true
 
 [node name="Back" type="Button" parent="."]
 layout_mode = 1
@@ -767,6 +1071,7 @@ offset_top = 10.0
 offset_right = -10.0
 offset_bottom = -50.0
 grow_horizontal = 0
+theme = ExtResource("6_7qvly")
 text = "Back"
 
 [connection signal="pressed" from="Back" to="." method="_on_button_pressed"]

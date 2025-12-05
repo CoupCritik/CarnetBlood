@@ -1,6 +1,12 @@
-[gd_resource type="Theme" format=3 uid="uid://hxxh0jcwjqxn"]
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://hxxh0jcwjqxn"]
+
+[ext_resource type="FontFile" uid="uid://btiuqd6y7ay11" path="res://Foremost Regular.ttf" id="1_saptt"]
 
 [resource]
+Button/font_sizes/font_size = 40
+Button/fonts/font = ExtResource("1_saptt")
 OptionButton/constants/icon_max_width = 120
+OptionButton/font_sizes/font_size = 38
+OptionButton/fonts/font = ExtResource("1_saptt")
 PopupMenu/colors/font_color = Color(0.6392835, 0.9445038, 0.8952623, 1)
 PopupMenu/constants/icon_max_width = 120
