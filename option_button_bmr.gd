@@ -6,7 +6,7 @@ extends OptionButton
 @export var demons:bool
 
 var tab_villageois = ["Grand-mère","Marin","Femme de chambre","Exorciste","Aubergiste","Parieur","Commère","Courtisan",
-	"Professeur","Ménestrel","Dame du thé","Pacifiste","Idiot"]
+	"Professeur","Ménestrel","Herboriste","Pacifiste","Idiot"]
 
 var tab_parias = ["Voyou","Lunatique","Bricoleur","Enfant de la lune"]
 
