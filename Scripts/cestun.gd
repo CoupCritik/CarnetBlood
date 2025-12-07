@@ -14,13 +14,13 @@ func chooseCharacter(i):
 	var role = $"../OptionButton".get_item_text(i)
 	
 	if role in $"../OptionButton".tab_villageois:
-		text = "Tu es un villageois"
+		text = "Tu es un [color=blue]villageois"
 	elif role in $"../OptionButton".tab_parias:
-		text = "Tu es un paria"
+		text = "Tu es un [color=blue]paria"
 	elif role in $"../OptionButton".tab_sbires:
-		text = "Tu es un sbire"
+		text = "Tu es un [color=red]sbire"
 	elif role in $"../OptionButton".tab_demons:
-		text = "Tu es un démon"
+		text = "Tu es un [color=red]démon"
 		
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.

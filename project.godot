@@ -11,10 +11,22 @@ config_version=5
 [application]
 
 config/name="CarnetBlood"
-run/main_scene="res://menu.tscn"
+run/main_scene="uid://c6migx1oo3ts0"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Signalbus="*res://signalbus.gd"
+Signalbus="*res://Scripts/signalbus.gd"
+
+[display]
+
+window/size/mode=2
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.20152658, 0.20152658, 0.20152658, 1)

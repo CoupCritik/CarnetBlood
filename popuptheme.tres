@@ -1,0 +1,26 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://hxxh0jcwjqxn"]
+
+[ext_resource type="FontFile" uid="uid://btiuqd6y7ay11" path="res://Foremost Regular.ttf" id="1_saptt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_saptt"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v2whg"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
+
+[resource]
+Button/font_sizes/font_size = 40
+Button/fonts/font = ExtResource("1_saptt")
+OptionButton/constants/icon_max_width = 120
+OptionButton/font_sizes/font_size = 38
+OptionButton/fonts/font = ExtResource("1_saptt")
+PopupMenu/colors/font_color = Color(0.6392835, 0.9445038, 0.8952623, 1)
+PopupMenu/constants/icon_max_width = 120
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_saptt")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_v2whg")

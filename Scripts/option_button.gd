@@ -5,8 +5,10 @@ extends OptionButton
 @export var sbires:bool
 @export var demons:bool
 
+
 var tab_villageois = ["Lavandière","Libraire","Enquêteur","Chef","Empathique","Voyante","Croque-mort","Moine",
 	"Gardien","Mercenaire","Vierge","Soldat","Maire"]
+
 
 var tab_parias = ["Demoiselle","Majordome","Ivrogne","Reclus","Saint"]
 
@@ -18,8 +20,10 @@ var tab_demons = ["Diablotin"]
 func _ready() -> void:
 	#Ajoute au popupmenu
 	if villageois:
-		for i in tab_villageois:
-			add_item(i)
+		for i in range(len(tab_villageois)):
+			
+			add_item(tab_villageois[i])
+			set_item_icon(i,load("res://icon.svg"))
 	
 	if parias:
 		for i in tab_parias:
