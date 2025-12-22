@@ -38,7 +38,6 @@ anchor_bottom = 0.5
 grow_vertical = 2
 
 [node name="Donner les rôles" parent="Arbre/Trouble Brewing" instance=ExtResource("2_4hy44")]
-unique_name_in_owner = true
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -60,7 +59,6 @@ offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
-metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="RichTextLabel" parent="Arbre/Trouble Brewing/Donner les rôles/Roles"]
 layout_mode = 2
@@ -72,7 +70,7 @@ horizontal_alignment = 1
 
 [node name="OptionButton" type="OptionButton" parent="Arbre/Trouble Brewing/Donner les rôles/Roles"]
 layout_mode = 2
-expand_icon = true
+theme = ExtResource("6_7qvly")
 script = ExtResource("3_mae5d")
 villageois = true
 parias = true
@@ -83,13 +81,12 @@ demons = true
 layout_mode = 2
 theme = ExtResource("5_ytr4m")
 bbcode_enabled = true
-text = "Tu es un"
+text = "Tu es un [color=blue]villageois"
 fit_content = true
 horizontal_alignment = 1
 script = ExtResource("4_4hy44")
 
 [node name="Première nuit" parent="Arbre/Trouble Brewing" instance=ExtResource("2_4hy44")]
-unique_name_in_owner = true
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -97,8 +94,7 @@ anchor_top = 0.5
 anchor_bottom = 0.5
 grow_vertical = 2
 
-[node name="Démon" parent="Arbre/Trouble Brewing/Première nuit" instance=ExtResource("2_4hy44")]
-unique_name_in_owner = true
+[node name="Diablotin" parent="Arbre/Trouble Brewing/Première nuit" instance=ExtResource("2_4hy44")]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -106,7 +102,7 @@ anchor_top = 0.5
 anchor_bottom = 0.5
 grow_vertical = 2
 
-[node name="Demon" type="VBoxContainer" parent="Arbre/Trouble Brewing/Première nuit/Démon"]
+[node name="Boite" type="VBoxContainer" parent="Arbre/Trouble Brewing/Première nuit/Diablotin"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -120,97 +116,48 @@ offset_bottom = 55.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="RichTextLabel" parent="Arbre/Trouble Brewing/Première nuit/Démon/Demon"]
+[node name="Label" type="RichTextLabel" parent="Arbre/Trouble Brewing/Première nuit/Diablotin/Boite"]
 layout_mode = 2
 theme = ExtResource("5_ytr4m")
 bbcode_enabled = true
-text = "Tu es le démon
+text = "Tu es le [color=red]Diablotin[/color]
 Tes trois bluffs sont :"
 fit_content = true
 horizontal_alignment = 1
+script = ExtResource("8_q3rjx")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Arbre/Trouble Brewing/Première nuit/Démon/Demon"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Arbre/Trouble Brewing/Première nuit/Diablotin/Boite"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="OptionButton" type="OptionButton" parent="Arbre/Trouble Brewing/Première nuit/Démon/Demon/HBoxContainer"]
+[node name="OptionBouton" parent="Arbre/Trouble Brewing/Première nuit/Diablotin/Boite/HBoxContainer" instance=ExtResource("7_kk3ma")]
 layout_mode = 2
 script = ExtResource("3_mae5d")
 villageois = true
 parias = true
 
-[node name="OptionButton3" type="OptionButton" parent="Arbre/Trouble Brewing/Première nuit/Démon/Demon/HBoxContainer"]
+[node name="OptionBouton2" parent="Arbre/Trouble Brewing/Première nuit/Diablotin/Boite/HBoxContainer" instance=ExtResource("7_kk3ma")]
 layout_mode = 2
 script = ExtResource("3_mae5d")
 villageois = true
 parias = true
 
-[node name="OptionButton4" type="OptionButton" parent="Arbre/Trouble Brewing/Première nuit/Démon/Demon/HBoxContainer"]
+[node name="OptionBouton3" parent="Arbre/Trouble Brewing/Première nuit/Diablotin/Boite/HBoxContainer" instance=ExtResource("7_kk3ma")]
 layout_mode = 2
 script = ExtResource("3_mae5d")
 villageois = true
 parias = true
 
-[node name="Label2" type="RichTextLabel" parent="Arbre/Trouble Brewing/Première nuit/Démon/Demon"]
+[node name="Label2" type="RichTextLabel" parent="Arbre/Trouble Brewing/Première nuit/Diablotin/Boite"]
 layout_mode = 2
 theme = ExtResource("5_ytr4m")
 bbcode_enabled = true
-text = "Une fois que tu as lu tes trois bluffs, le MJ te pointe du doigts tes sbires"
+text = "Une fois que tu as lu tes trois bluffs, le MJ te pointe du doigts tes sbires. "
 fit_content = true
 horizontal_alignment = 1
-
-[node name="Sbires" parent="Arbre/Trouble Brewing/Première nuit" instance=ExtResource("2_4hy44")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_top = 0.5
-anchor_bottom = 0.5
-grow_vertical = 2
-
-[node name="Sbires" type="VBoxContainer" parent="Arbre/Trouble Brewing/Première nuit/Sbires"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -193.0
-offset_top = -55.5
-offset_right = 193.0
-offset_bottom = 55.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="RichTextLabel" parent="Arbre/Trouble Brewing/Première nuit/Sbires/Sbires"]
-layout_mode = 2
-theme = ExtResource("5_ytr4m")
-bbcode_enabled = true
-text = "Vous êtes sbires !
-Le MJ réveille les sbires, puis pointe du doigt le démon."
-fit_content = true
-horizontal_alignment = 1
-
-[node name="Label2" type="RichTextLabel" parent="Arbre/Trouble Brewing/Première nuit/Sbires/Sbires"]
-layout_mode = 2
-theme = ExtResource("5_ytr4m")
-bbcode_enabled = true
-text = "Attention :"
-fit_content = true
-horizontal_alignment = 1
-
-[node name="OptionButton" type="OptionButton" parent="Arbre/Trouble Brewing/Première nuit/Sbires/Sbires"]
-layout_mode = 2
-item_count = 2
-popup/item_0/text = "Il y a une demoiselle !"
-popup/item_0/id = 0
-popup/item_1/text = "Il n'y a pas de demoiselle"
-popup/item_1/id = 1
-script = ExtResource("3_mae5d")
 
 [node name="Enquêteur" parent="Arbre/Trouble Brewing/Première nuit" instance=ExtResource("2_4hy44")]
-unique_name_in_owner = true
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -218,37 +165,36 @@ anchor_top = 0.5
 anchor_bottom = 0.5
 grow_vertical = 2
 
-[node name="Boite" type="VBoxContainer" parent="Arbre/Trouble Brewing/Première nuit/Enquêteur"]
+[node name="MontrerJoueur" type="VBoxContainer" parent="Arbre/Trouble Brewing/Première nuit/Enquêteur"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -193.0
-offset_top = -55.5
-offset_right = 193.0
-offset_bottom = 55.5
+offset_left = -337.0
+offset_top = -238.0
+offset_right = 363.0
+offset_bottom = 231.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="RichTextLabel" parent="Arbre/Trouble Brewing/Première nuit/Enquêteur/Boite"]
+[node name="Label" type="RichTextLabel" parent="Arbre/Trouble Brewing/Première nuit/Enquêteur/MontrerJoueur"]
 layout_mode = 2
 theme = ExtResource("5_ytr4m")
 bbcode_enabled = true
-text = "L'un de ces deux joueurs possède le rôle suivant :"
+text = "Le MJ va te pointer du doigt deux joueurs. L'un de ces joueurs est :"
 fit_content = true
 horizontal_alignment = 1
+metadata/_edit_lock_ = true
 
-[node name="OptionButton" type="OptionButton" parent="Arbre/Trouble Brewing/Première nuit/Enquêteur/Boite"]
+[node name="OptionButton2" parent="Arbre/Trouble Brewing/Première nuit/Enquêteur/MontrerJoueur" instance=ExtResource("7_kk3ma")]
 layout_mode = 2
-item_count = 1
-popup/item_0/id = 0
 script = ExtResource("3_mae5d")
 sbires = true
+metadata/_edit_lock_ = true
 
 [node name="Libraire" parent="Arbre/Trouble Brewing/Première nuit" instance=ExtResource("2_4hy44")]
-unique_name_in_owner = true
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -256,37 +202,36 @@ anchor_top = 0.5
 anchor_bottom = 0.5
 grow_vertical = 2
 
-[node name="Boite" type="VBoxContainer" parent="Arbre/Trouble Brewing/Première nuit/Libraire"]
+[node name="MontrerJoueur" type="VBoxContainer" parent="Arbre/Trouble Brewing/Première nuit/Libraire"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -193.0
-offset_top = -55.5
-offset_right = 193.0
-offset_bottom = 55.5
+offset_left = -337.0
+offset_top = -238.0
+offset_right = 363.0
+offset_bottom = 231.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="RichTextLabel" parent="Arbre/Trouble Brewing/Première nuit/Libraire/Boite"]
+[node name="Label" type="RichTextLabel" parent="Arbre/Trouble Brewing/Première nuit/Libraire/MontrerJoueur"]
 layout_mode = 2
 theme = ExtResource("5_ytr4m")
 bbcode_enabled = true
-text = "L'un de ces deux joueurs possède le rôle suivant :"
+text = "Le MJ va te pointer du doigt deux joueurs. L'un de ces joueurs est :"
 fit_content = true
 horizontal_alignment = 1
+metadata/_edit_lock_ = true
 
-[node name="OptionButton" type="OptionButton" parent="Arbre/Trouble Brewing/Première nuit/Libraire/Boite"]
+[node name="OptionButton2" parent="Arbre/Trouble Brewing/Première nuit/Libraire/MontrerJoueur" instance=ExtResource("7_kk3ma")]
 layout_mode = 2
-item_count = 1
-popup/item_0/id = 0
 script = ExtResource("3_mae5d")
 parias = true
+metadata/_edit_lock_ = true
 
 [node name="Lavandière" parent="Arbre/Trouble Brewing/Première nuit" instance=ExtResource("2_4hy44")]
-unique_name_in_owner = true
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -294,85 +239,44 @@ anchor_top = 0.5
 anchor_bottom = 0.5
 grow_vertical = 2
 
-[node name="Boite" type="VBoxContainer" parent="Arbre/Trouble Brewing/Première nuit/Lavandière"]
+[node name="MontrerJoueur" type="VBoxContainer" parent="Arbre/Trouble Brewing/Première nuit/Lavandière"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -193.0
-offset_top = -55.5
-offset_right = 193.0
-offset_bottom = 55.5
+offset_left = -337.0
+offset_top = -238.0
+offset_right = 363.0
+offset_bottom = 231.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="RichTextLabel" parent="Arbre/Trouble Brewing/Première nuit/Lavandière/Boite"]
+[node name="Label" type="RichTextLabel" parent="Arbre/Trouble Brewing/Première nuit/Lavandière/MontrerJoueur"]
 layout_mode = 2
 theme = ExtResource("5_ytr4m")
 bbcode_enabled = true
-text = "L'un de ces deux joueurs possède le rôle suivant :"
+text = "Le MJ va te pointer du doigt deux joueurs. L'un de ces joueurs est :"
 fit_content = true
 horizontal_alignment = 1
+metadata/_edit_lock_ = true
 
-[node name="OptionButton" type="OptionButton" parent="Arbre/Trouble Brewing/Première nuit/Lavandière/Boite"]
+[node name="OptionButton2" parent="Arbre/Trouble Brewing/Première nuit/Lavandière/MontrerJoueur" instance=ExtResource("7_kk3ma")]
 layout_mode = 2
-item_count = 1
-popup/item_0/id = 0
 script = ExtResource("3_mae5d")
 villageois = true
+metadata/_edit_lock_ = true
 
 [node name="Autres nuits" parent="Arbre/Trouble Brewing" instance=ExtResource("2_4hy44")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-
-[node name="Gardien" parent="Arbre/Trouble Brewing/Autres nuits" instance=ExtResource("2_4hy44")]
-unique_name_in_owner = true
 visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_top = 0.5
 anchor_bottom = 0.5
 grow_vertical = 2
-
-[node name="Gardien" type="VBoxContainer" parent="Arbre/Trouble Brewing/Autres nuits/Gardien"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -193.0
-offset_top = -55.5
-offset_right = 193.0
-offset_bottom = 55.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="RichTextLabel" parent="Arbre/Trouble Brewing/Autres nuits/Gardien/Gardien"]
-layout_mode = 2
-theme = ExtResource("5_ytr4m")
-bbcode_enabled = true
-text = "Tu es mort ! Choisis un joueur !
-
-Ce joueur est :"
-fit_content = true
-horizontal_alignment = 1
-
-[node name="OptionButton" type="OptionButton" parent="Arbre/Trouble Brewing/Autres nuits/Gardien/Gardien"]
-layout_mode = 2
-item_count = 1
-popup/item_0/id = 0
-script = ExtResource("3_mae5d")
-villageois = true
-parias = true
-sbires = true
-demons = true
 
 [node name="Croque-mort" parent="Arbre/Trouble Brewing/Autres nuits" instance=ExtResource("2_4hy44")]
-unique_name_in_owner = true
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -380,7 +284,87 @@ anchor_top = 0.5
 anchor_bottom = 0.5
 grow_vertical = 2
 
-[node name="Boite" type="VBoxContainer" parent="Arbre/Trouble Brewing/Autres nuits/Croque-mort"]
+[node name="MontrerJoueur" type="VBoxContainer" parent="Arbre/Trouble Brewing/Autres nuits/Croque-mort"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -337.0
+offset_top = -238.0
+offset_right = 363.0
+offset_bottom = 231.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Trouble Brewing/Autres nuits/Croque-mort/MontrerJoueur"]
+layout_mode = 2
+theme = ExtResource("5_ytr4m")
+bbcode_enabled = true
+text = "Ce joueur était"
+fit_content = true
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="OptionButton2" parent="Arbre/Trouble Brewing/Autres nuits/Croque-mort/MontrerJoueur" instance=ExtResource("7_kk3ma")]
+layout_mode = 2
+script = ExtResource("3_mae5d")
+villageois = true
+parias = true
+sbires = true
+demons = true
+metadata/_edit_lock_ = true
+
+[node name="Gardien" parent="Arbre/Trouble Brewing/Autres nuits" instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="MontrerJoueur" type="VBoxContainer" parent="Arbre/Trouble Brewing/Autres nuits/Gardien"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -337.0
+offset_top = -238.0
+offset_right = 363.0
+offset_bottom = 231.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Trouble Brewing/Autres nuits/Gardien/MontrerJoueur"]
+layout_mode = 2
+theme = ExtResource("5_ytr4m")
+bbcode_enabled = true
+text = "Ce joueur était :"
+fit_content = true
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="OptionButton2" parent="Arbre/Trouble Brewing/Autres nuits/Gardien/MontrerJoueur" instance=ExtResource("7_kk3ma")]
+layout_mode = 2
+script = ExtResource("3_mae5d")
+villageois = true
+parias = true
+sbires = true
+demons = true
+metadata/_edit_lock_ = true
+
+[node name="Montrer un role" parent="Arbre/Trouble Brewing" instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+
+[node name="Ce joueur est" parent="Arbre/Trouble Brewing/Montrer un role" instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+
+[node name="MontrerJoueur" type="VBoxContainer" parent="Arbre/Trouble Brewing/Montrer un role/Ce joueur est"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -394,23 +378,69 @@ offset_bottom = 55.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="RichTextLabel" parent="Arbre/Trouble Brewing/Autres nuits/Croque-mort/Boite"]
+[node name="Label" type="RichTextLabel" parent="Arbre/Trouble Brewing/Montrer un role/Ce joueur est/MontrerJoueur"]
 layout_mode = 2
 theme = ExtResource("5_ytr4m")
 bbcode_enabled = true
-text = "Le joueur mort pendant la journée précédente était :"
+text = "Ce joueur est :"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="OptionButton" type="OptionButton" parent="Arbre/Trouble Brewing/Autres nuits/Croque-mort/Boite"]
+[node name="OptionButton2" parent="Arbre/Trouble Brewing/Montrer un role/Ce joueur est/MontrerJoueur" instance=ExtResource("7_kk3ma")]
 layout_mode = 2
-item_count = 1
-popup/item_0/id = 0
 script = ExtResource("3_mae5d")
 villageois = true
 parias = true
 sbires = true
 demons = true
+
+[node name="Tu es désormais" parent="Arbre/Trouble Brewing/Montrer un role" instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+
+[node name="MontrerJoueur" type="VBoxContainer" parent="Arbre/Trouble Brewing/Montrer un role/Tu es désormais"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -55.5
+offset_right = 193.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Trouble Brewing/Montrer un role/Tu es désormais/MontrerJoueur"]
+layout_mode = 2
+theme = ExtResource("5_ytr4m")
+bbcode_enabled = true
+text = "Tu es désormais :"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="OptionButton2" parent="Arbre/Trouble Brewing/Montrer un role/Tu es désormais/MontrerJoueur" instance=ExtResource("7_kk3ma")]
+layout_mode = 2
+script = ExtResource("3_mae5d")
+villageois = true
+parias = true
+sbires = true
+demons = true
+
+[node name="Texte personnalisé" parent="Arbre/Trouble Brewing" instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+
+[node name="TextEdit" type="TextEdit" parent="Arbre/Trouble Brewing/Texte personnalisé"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = -1
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_ytr4m")
+scroll_fit_content_height = true
+scroll_fit_content_width = true
 
 [node name="Bad Moon Rising" parent="Arbre" instance=ExtResource("2_4hy44")]
 unique_name_in_owner = true

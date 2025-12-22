@@ -22,7 +22,7 @@ func _ready() -> void:
 		add_separator("Villageois")
 		for i in range(len(tab_villageois)):
 			add_item(tab_villageois[i])
-			set_item_icon(i+1,load("res://bmr/villageois/" + tab_villageois[i] +".png"))
+			set_item_icon(i+1,load("res://icones/bmr/villageois/" + tab_villageois[i] +".png"))
 	
 	
 	if parias:
@@ -30,21 +30,21 @@ func _ready() -> void:
 		var indice = item_count
 		for i in range(len(tab_parias)):
 			add_item(tab_parias[i])
-			set_item_icon(indice + i,load("res://bmr/Parias/" + tab_parias[i] +".png"))
+			set_item_icon(indice + i,load("res://icones/bmr/Parias/" + tab_parias[i] +".png"))
 	
 	if sbires:
 		add_separator("Sbires")
 		var indice = item_count
 		for i in range(len(tab_sbires)):
 			add_item(tab_sbires[i])
-			set_item_icon(indice + i,load("res://bmr/mechants/" + tab_sbires[i] +".png"))
+			set_item_icon(indice + i,load("res://icones/bmr/mechants/" + tab_sbires[i] +".png"))
 		
 	if demons:
 		add_separator("Démons")
 		var indice = item_count
 		for i in range(len(tab_demons)):
 			add_item(tab_demons[i])
-			set_item_icon(indice + i,load("res://bmr/mechants/" + tab_demons[i] +".png"))
+			set_item_icon(indice + i,load("res://icones/bmr/mechants/" + tab_demons[i] +".png"))
 		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

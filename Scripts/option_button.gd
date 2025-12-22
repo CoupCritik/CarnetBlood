@@ -19,24 +19,33 @@ var tab_demons = ["Diablotin"]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#Ajoute au popupmenu
+	
 	if villageois:
+		add_separator("Villageois")
 		for i in range(len(tab_villageois)):
-			
 			add_item(tab_villageois[i])
-			set_item_icon(i,load("res://icon.svg"))
+			set_item_icon(i+1,load("res://icones/tb/villageois/" + tab_villageois[i] +".png"))
+	
 	
 	if parias:
-		for i in tab_parias:
-			add_item(i)
-
+		add_separator("Parias")
+		var indice = item_count
+		for i in range(len(tab_parias)):
+			add_item(tab_parias[i])
+			set_item_icon(indice + i,load("res://icones/tb/Parias/" + tab_parias[i] +".png"))
 	
 	if sbires:
-		for i in tab_sbires:
-			add_item(i)
+		add_separator("Sbires")
+		var indice = item_count
+		for i in range(len(tab_sbires)):
+			add_item(tab_sbires[i])
+			set_item_icon(indice + i,load("res://icones/tb/mechants/" + tab_sbires[i] +".png"))
 		
 	if demons:
-		for i in tab_demons:
-			add_item(i)
-
+		add_separator("Démons")
+		var indice = item_count
+		for i in range(len(tab_demons)):
+			add_item(tab_demons[i])
+			set_item_icon(indice + i,load("res://icones/tb/mechants/" + tab_demons[i] +".png"))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
