@@ -32,7 +32,7 @@ func _ready() -> void:
 		var indice = item_count
 		for i in range(len(tab_parias)):
 			add_item(tab_parias[i])
-			set_item_icon(indice + i,load("res://icones/tb/Parias/" + tab_parias[i] +".png"))
+			set_item_icon(indice + i,load("res://icones/tb/parias/" + tab_parias[i] +".png"))
 	
 	if sbires:
 		add_separator("Sbires")
