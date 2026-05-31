@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://bedi3uy4u7d0e" path="res://Scripts/labelsdemon.gd" id="8_q3rjx"]
 [ext_resource type="Script" uid="uid://drq5v0bwy3bn4" path="res://Scenes/ajoutsparias.gd" id="9_6swd7"]
 [ext_resource type="Texture2D" uid="uid://c8dk1t8vsvf0k" path="res://kebabiste.jpg" id="11_rfqti"]
+[ext_resource type="Script" uid="uid://d3f32wtn46b4d" path="res://Scripts/option_button_rtc.gd" id="12_g8i7c"]
 
 [node name="Menu" type="Control" unique_id=931664931]
 layout_mode = 3
@@ -1658,6 +1659,345 @@ visible = false
 layout_mode = 1
 
 [node name="TextEdit" type="TextEdit" parent="Arbre/Partie Mystère/Texte personnalisé" unique_id=1933766512]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = -1
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_ytr4m")
+scroll_fit_content_height = true
+scroll_fit_content_width = true
+
+[node name="Ride The Cyclone" parent="Arbre" unique_id=1332830884 instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+
+[node name="Donner les rôles" parent="Arbre/Ride The Cyclone" unique_id=2118041127 instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="Roles" type="VBoxContainer" parent="Arbre/Ride The Cyclone/Donner les rôles" unique_id=882046213]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -60.0
+offset_right = 193.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Ride The Cyclone/Donner les rôles/Roles" unique_id=994015099]
+layout_mode = 2
+theme = ExtResource("5_ytr4m")
+bbcode_enabled = true
+text = "Tu es :"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="Arbre/Ride The Cyclone/Donner les rôles/Roles" unique_id=1831930052]
+layout_mode = 2
+theme = ExtResource("6_7qvly")
+script = ExtResource("12_g8i7c")
+villageois = true
+parias = true
+sbires = true
+demons = true
+
+[node name="Label2" type="RichTextLabel" parent="Arbre/Ride The Cyclone/Donner les rôles/Roles" unique_id=1172824124]
+layout_mode = 2
+theme = ExtResource("5_ytr4m")
+bbcode_enabled = true
+text = "Tu es un [color=blue]villageois"
+fit_content = true
+horizontal_alignment = 1
+script = ExtResource("4_4hy44")
+
+[node name="Première nuit" parent="Arbre/Ride The Cyclone" unique_id=1041411563 instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="Boffin" parent="Arbre/Ride The Cyclone/Première nuit" unique_id=436036456 instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="Boite" type="VBoxContainer" parent="Arbre/Ride The Cyclone/Première nuit/Boffin" unique_id=563858484]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -55.5
+offset_right = 193.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Ride The Cyclone/Première nuit/Boffin/Boite" unique_id=1000932767]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+theme = ExtResource("5_ytr4m")
+bbcode_enabled = true
+text = "Vous êtes le [color=red]Boffin[/color] et le [color=red]Al Hadikia[/color]
+Le pouvoir que donne le Boffin est :"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="OptionBouton" parent="Arbre/Ride The Cyclone/Première nuit/Boffin/Boite" unique_id=1239490497 instance=ExtResource("7_kk3ma")]
+layout_mode = 2
+script = ExtResource("12_g8i7c")
+villageois = true
+parias = true
+
+[node name="Snitch" parent="Arbre/Ride The Cyclone/Première nuit" unique_id=1630938717 instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.5
+anchor_right = 0.0
+anchor_bottom = 0.5
+grow_horizontal = 1
+grow_vertical = 2
+
+[node name="Boite" type="VBoxContainer" parent="Arbre/Ride The Cyclone/Première nuit/Snitch" unique_id=978644241]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -55.5
+offset_right = 193.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Ride The Cyclone/Première nuit/Snitch/Boite" unique_id=1592511334]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+theme = ExtResource("5_ytr4m")
+bbcode_enabled = true
+text = "Il y a une Snitch en jeu, voici vos trois bluffs :
+"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Arbre/Ride The Cyclone/Première nuit/Snitch/Boite" unique_id=33693299]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="OptionBouton" parent="Arbre/Ride The Cyclone/Première nuit/Snitch/Boite/HBoxContainer" unique_id=1439237381 instance=ExtResource("7_kk3ma")]
+layout_mode = 2
+script = ExtResource("12_g8i7c")
+villageois = true
+parias = true
+
+[node name="OptionBouton2" parent="Arbre/Ride The Cyclone/Première nuit/Snitch/Boite/HBoxContainer" unique_id=366817071 instance=ExtResource("7_kk3ma")]
+layout_mode = 2
+script = ExtResource("12_g8i7c")
+villageois = true
+parias = true
+
+[node name="OptionBouton3" parent="Arbre/Ride The Cyclone/Première nuit/Snitch/Boite/HBoxContainer" unique_id=1404639078 instance=ExtResource("7_kk3ma")]
+layout_mode = 2
+script = ExtResource("12_g8i7c")
+villageois = true
+parias = true
+
+[node name="Al-Hadikhia" parent="Arbre/Ride The Cyclone/Première nuit" unique_id=1900990885 instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="Boite" type="VBoxContainer" parent="Arbre/Ride The Cyclone/Première nuit/Al-Hadikhia" unique_id=874662206]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -55.5
+offset_right = 193.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Ride The Cyclone/Première nuit/Al-Hadikhia/Boite" unique_id=2097406752]
+layout_mode = 2
+theme = ExtResource("5_ytr4m")
+bbcode_enabled = true
+text = "Tu es le [color=red]Al-Hadikhia[/color]
+Tes trois bluffs sont :"
+fit_content = true
+horizontal_alignment = 1
+script = ExtResource("8_q3rjx")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Arbre/Ride The Cyclone/Première nuit/Al-Hadikhia/Boite" unique_id=123745148]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="OptionBouton" parent="Arbre/Ride The Cyclone/Première nuit/Al-Hadikhia/Boite/HBoxContainer" unique_id=1923689957 instance=ExtResource("7_kk3ma")]
+layout_mode = 2
+script = ExtResource("12_g8i7c")
+villageois = true
+parias = true
+
+[node name="OptionBouton2" parent="Arbre/Ride The Cyclone/Première nuit/Al-Hadikhia/Boite/HBoxContainer" unique_id=744108659 instance=ExtResource("7_kk3ma")]
+layout_mode = 2
+script = ExtResource("12_g8i7c")
+villageois = true
+parias = true
+
+[node name="OptionBouton3" parent="Arbre/Ride The Cyclone/Première nuit/Al-Hadikhia/Boite/HBoxContainer" unique_id=312417086 instance=ExtResource("7_kk3ma")]
+layout_mode = 2
+script = ExtResource("12_g8i7c")
+villageois = true
+parias = true
+
+[node name="Label2" type="RichTextLabel" parent="Arbre/Ride The Cyclone/Première nuit/Al-Hadikhia/Boite" unique_id=884428802]
+layout_mode = 2
+theme = ExtResource("5_ytr4m")
+bbcode_enabled = true
+text = "Une fois que tu as lu tes trois bluffs, le MJ te pointe du doigts tes sbires. "
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Autres nuits" parent="Arbre/Ride The Cyclone" unique_id=818183814 instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+
+[node name="Preacher" parent="Arbre/Ride The Cyclone/Autres nuits" unique_id=1876100853 instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="MontrerJoueur" type="VBoxContainer" parent="Arbre/Ride The Cyclone/Autres nuits/Preacher" unique_id=414017470]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -55.5
+offset_right = 193.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Ride The Cyclone/Autres nuits/Preacher/MontrerJoueur" unique_id=250303167]
+layout_mode = 2
+theme = ExtResource("5_ytr4m")
+bbcode_enabled = true
+text = "Le Preacher t'a sélectionné ! Tu n'as plus de pouvoir tant qu'il est vivant"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Montrer un role" parent="Arbre/Ride The Cyclone" unique_id=416382796 instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+
+[node name="Ce joueur est" parent="Arbre/Ride The Cyclone/Montrer un role" unique_id=137292206 instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+
+[node name="MontrerJoueur" type="VBoxContainer" parent="Arbre/Ride The Cyclone/Montrer un role/Ce joueur est" unique_id=1211541506]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -55.5
+offset_right = 193.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Ride The Cyclone/Montrer un role/Ce joueur est/MontrerJoueur" unique_id=655554791]
+layout_mode = 2
+theme = ExtResource("5_ytr4m")
+bbcode_enabled = true
+text = "Ce joueur est :"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="OptionButton2" parent="Arbre/Ride The Cyclone/Montrer un role/Ce joueur est/MontrerJoueur" unique_id=1279152377 instance=ExtResource("7_kk3ma")]
+layout_mode = 2
+villageois = true
+parias = true
+sbires = true
+demons = true
+
+[node name="Choisis un rôle" parent="Arbre/Ride The Cyclone/Montrer un role" unique_id=1783769868 instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+
+[node name="MontrerJoueur" type="VBoxContainer" parent="Arbre/Ride The Cyclone/Montrer un role/Choisis un rôle" unique_id=784322258]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -55.5
+offset_right = 193.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Arbre/Ride The Cyclone/Montrer un role/Choisis un rôle/MontrerJoueur" unique_id=765432263]
+layout_mode = 2
+theme = ExtResource("5_ytr4m")
+bbcode_enabled = true
+text = "Choisis un rôle
+"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="OptionButton2" parent="Arbre/Ride The Cyclone/Montrer un role/Choisis un rôle/MontrerJoueur" unique_id=858839669 instance=ExtResource("7_kk3ma")]
+layout_mode = 2
+villageois = true
+parias = true
+sbires = true
+demons = true
+
+[node name="Texte personnalisé" parent="Arbre/Ride The Cyclone" unique_id=336221094 instance=ExtResource("2_4hy44")]
+visible = false
+layout_mode = 1
+
+[node name="TextEdit" type="TextEdit" parent="Arbre/Ride The Cyclone/Texte personnalisé" unique_id=359291694]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 1
 anchors_preset = -1
